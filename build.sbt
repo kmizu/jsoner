@@ -8,6 +8,12 @@ publishMavenStyle := true
 
 antlr4Settings
 
+antlr4PackageName in Antlr4 := Some("com.github.kmizu.jsoner")
+
+antlr4GenListener in Antlr4 := true
+
+antlr4GenVisitor in Antlr4 := false
+
 val scaladocBranch = settingKey[String]("branch name for scaladoc -doc-source-url")
 
 scaladocBranch := "master"

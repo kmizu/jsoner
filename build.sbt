@@ -14,6 +14,11 @@ antlr4GenListener in Antlr4 := true
 
 antlr4GenVisitor in Antlr4 := false
 
+javaSource in Antlr4 := baseDirectory.value / "src_managed" / "main" / "antlr4"
+
+val oldUnmanagedSourceDirectories = unmanagedSourceDirectories in Compile
+unmanagedSourceDirectories in Compile := oldUnmanagedSourceDirectories.value ++ Seq((javaSource in Antlr4).value)
+
 val scaladocBranch = settingKey[String]("branch name for scaladoc -doc-source-url")
 
 scaladocBranch := "master"
